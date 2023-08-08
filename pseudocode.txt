@@ -1,0 +1,4 @@
+1. Design the layout of the webpage (Header, Footer, etc.)
+2. Create a sketch board
+3. Add interactivity to the sketch board
+4. Add final details (Reset button, etc.)
