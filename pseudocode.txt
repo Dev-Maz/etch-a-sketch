@@ -1,4 +1,7 @@
 1. Design the layout of the webpage (Header, Footer, etc.)
 2. Create a sketch board
+    1. Define a function to create a grid dynamically
+    2. Size and style the sketch board
+    3. Add a limit to the grid size
 3. Add interactivity to the sketch board
 4. Add final details (Reset button, etc.)
