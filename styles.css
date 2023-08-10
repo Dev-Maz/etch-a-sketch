@@ -84,3 +84,24 @@ body {
 .black-pen {
     background-color: black;
 }
+
+#left-buttons,
+#right-buttons {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 90px;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 16px;
+}
+
+.button {
+    flex: 0 0 auto;
+    height: 65px;
+    border-radius: 16px;
+    background-color: #A7BEAE;
+    border: none;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 500;
+}
