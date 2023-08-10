@@ -4,4 +4,9 @@
     2. Size and style the sketch board
     3. Add a limit to the grid size
 3. Add interactivity to the sketch board
-4. Add final details (Reset button, etc.)
+    1. Add an event listener for simple drawing
+    2. Add a button to reset the sketch board, but keeping the same size
+    3. Add a button to reset the sketch board and change the size
+    4. (OPTIONAL) Add buttons to change the pen color to specific colors
+    5. (OPTIONAL) Add a button to change the pen color to random colors
+4. Add final details

@@ -80,3 +80,7 @@ body {
 .border-right {
     border-right: 1px solid rgb(220, 220, 220);
 }
+
+.black-pen {
+    background-color: black;
+}

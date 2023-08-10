@@ -1,3 +1,6 @@
+let penColor = 'black-pen';
+let mouseIsDown = false;
+
 function createSketchBoard(girdSize) {
     // Optimization check
     if (girdSize > 100) {
@@ -6,6 +9,7 @@ function createSketchBoard(girdSize) {
     }
 
     // Sketch board creation
+    const sketchBoard = document.querySelector('#sketch-board');
     for (let i = 0; i < girdSize; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
@@ -18,9 +22,25 @@ function createSketchBoard(girdSize) {
             if (j !== (girdSize - 1)) {
                 column.classList.add('border-right');
             }
+            column.addEventListener('mouseover', penEffect);
             row.appendChild(column);
         }
-        const sketchBoard = document.querySelector('#sketch-board');
         sketchBoard.appendChild(row);
+    }
+    sketchBoard.addEventListener('mousedown', updateMouseState);
+    sketchBoard.addEventListener('mouseup', updateMouseState);
+}
+
+function penEffect(event) {
+    if (mouseIsDown) {
+        event.target.classList.add(penColor);
+    }
+}
+
+function updateMouseState(event) {
+    if (event.type === 'mousedown') {
+        mouseIsDown = true;
+    } else if (event.type === 'mouseup') {
+        mouseIsDown = false;
     }
 }
