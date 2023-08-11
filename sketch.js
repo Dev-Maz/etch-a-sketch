@@ -36,6 +36,9 @@ greenBtn.addEventListener('click', () => penColor = 'green-pen');
 const randomColorBtn = document.querySelector('#random');
 randomColorBtn.addEventListener('click', () => penColor = 'random-pen');
 
+const eraseBtn = document.querySelector('#eraser');
+eraseBtn.addEventListener('click', () => penColor = 'eraser');
+
 
 // Function definitions
 function createSketchBoard(girdSize) {
@@ -73,10 +76,11 @@ function penEffect(event) {
     if (mouseIsDown) {
         if (penColor === 'random-pen') {
             event.target.setAttribute('style', `background-color: ${randomColor()};`);
-            return;
+        } else if (penColor === 'eraser') {
+            erase(event);
+        } else {
+            event.target.classList.add(penColor);   
         }
-
-        event.target.classList.add(penColor);
     }
 }
 
@@ -94,4 +98,15 @@ function randomColor() {
 
 function randomNumber(max) {
     return Math.floor(Math.random() * max);
+}
+
+function erase(event) {
+    event.target.removeAttribute('style');
+    event.target.classList.remove(
+        'black-pen',
+        'blue-pen',
+        'red-pen',
+        'yellow-pen',
+        'green-pen'
+    );
 }
