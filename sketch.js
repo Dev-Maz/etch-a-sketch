@@ -1,6 +1,7 @@
 let currentSize;
 let penColor = 'black-pen';
 let mouseIsDown = false;
+let shadeLightness = 0;
 const sketchBoard = document.querySelector('#sketch-board');
 createSketchBoard(50);
 
@@ -38,6 +39,12 @@ randomColorBtn.addEventListener('click', () => penColor = 'random-pen');
 
 const eraseBtn = document.querySelector('#eraser');
 eraseBtn.addEventListener('click', () => penColor = 'eraser');
+
+const shadeBtn = document.querySelector('#shade');
+shadeBtn.addEventListener('click', () => {
+    shadeLightness = 0;
+    penColor = 'shade';
+});
 
 
 // Function definitions
@@ -78,8 +85,10 @@ function penEffect(event) {
             event.target.setAttribute('style', `background-color: ${randomColor()};`);
         } else if (penColor === 'eraser') {
             erase(event);
+        } else if (penColor === 'shade') {
+            drawShade(event);
         } else {
-            event.target.classList.add(penColor);   
+            event.target.classList.add(penColor);
         }
     }
 }
@@ -109,4 +118,9 @@ function erase(event) {
         'yellow-pen',
         'green-pen'
     );
+}
+
+function drawShade(event) {
+    event.target.setAttribute('style', `background-color: hsl(0 , 0%, ${shadeLightness}%);`);
+    shadeLightness += 10;
 }
