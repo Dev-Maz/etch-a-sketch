@@ -15,7 +15,12 @@ resetSketchBoardBtn.addEventListener('click', () => {
 const newSketchBoardBtn = document.querySelector('#new-sketch');
 newSketchBoardBtn.addEventListener('click', () => {
     sketchBoard.innerHTML = '';
-    let userSizeChoice = prompt('What should the new sketch board\'s size be?');
+    let userSizeChoice;
+    do {
+        userSizeChoice = prompt('What should the new sketch board\'s size be?');
+        if (isNaN(userSizeChoice) || userSizeChoice === 0 || userSizeChoice === '') alert('Enter a valid number!');
+        console.log(userSizeChoice);
+    } while (isNaN(userSizeChoice) || userSizeChoice === 0 || userSizeChoice === '')
     createSketchBoard(userSizeChoice);
 })
 
