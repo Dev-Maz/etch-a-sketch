@@ -9,5 +9,8 @@
     3. Add a button to reset the sketch board and change the size
     4. (OPTIONAL) Add buttons to change the pen color to specific colors
     5. (OPTIONAL) Add a button to change the pen color to random colors
-    6. (OPTIONAL) Add a button to make the pen's brightness progressively change
+    6. (OPTIONAL) Add a button for single tile erasing
+    7. (OPTIONAL) Add a button to make the pen's brightness progressively change
 4. Add final details
+    1. Add error handling to #new-sketch button
+    2. Add my github profile url

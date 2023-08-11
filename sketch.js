@@ -18,6 +18,24 @@ newSketchBoardBtn.addEventListener('click', () => {
     createSketchBoard(userSizeChoice);
 })
 
+const blueBtn = document.querySelector('#blue');
+blueBtn.addEventListener('click', () => penColor = 'blue-pen');
+
+const blackBtn = document.querySelector('#black');
+blackBtn.addEventListener('click', () => penColor = 'black-pen');
+
+const yellowBtn = document.querySelector('#yellow');
+yellowBtn.addEventListener('click', () => penColor = 'yellow-pen');
+
+const redBtn = document.querySelector('#red');
+redBtn.addEventListener('click', () => penColor = 'red-pen');
+
+const greenBtn = document.querySelector('#green');
+greenBtn.addEventListener('click', () => penColor = 'green-pen');
+
+const randomColorBtn = document.querySelector('#random');
+randomColorBtn.addEventListener('click', () => penColor = 'random-pen');
+
 
 // Function definitions
 function createSketchBoard(girdSize) {
@@ -53,6 +71,11 @@ function createSketchBoard(girdSize) {
 
 function penEffect(event) {
     if (mouseIsDown) {
+        if (penColor === 'random-pen') {
+            event.target.setAttribute('style', `background-color: ${randomColor()};`);
+            return;
+        }
+
         event.target.classList.add(penColor);
     }
 }
@@ -63,4 +86,12 @@ function updateMouseState(event) {
     } else if (event.type === 'mouseup') {
         mouseIsDown = false;
     }
+}
+
+function randomColor() {
+    return `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
+}
+
+function randomNumber(max) {
+    return Math.floor(Math.random() * max);
 }

@@ -81,10 +81,6 @@ body {
     border-right: 1px solid rgb(220, 220, 220);
 }
 
-.black-pen {
-    background-color: black;
-}
-
 #left-buttons,
 #right-buttons {
     display: flex;
@@ -104,4 +100,24 @@ body {
     font-family: inherit;
     font-size: 17px;
     font-weight: 500;
+}
+
+.black-pen {
+    background-color: black;
+}
+
+.blue-pen {
+    background-color: #00539C;
+}
+
+.red-pen {
+    background-color: #CC313D;
+}
+
+.green-pen {
+    background-color: #3A6B35;
+}
+
+.yellow-pen {
+    background-color: #FEE715;
 }
